@@ -1,10 +1,6 @@
 
 const Db = require('../Config Files/DbConfig');
-
-
-
 exports.GetAllJobs = async () =>{
-
   return  await Db.JobRepository.find().sort({PostedDate:1});
 };
 
@@ -27,15 +23,11 @@ if(Job !== null){ return Job;}else{ throw Error( "No Job  Found");}
     const PostedBy = await Db.UserRepository.findById(Id);
     if(PostedBy ==null ){ throw Error('Unauthorize User');}
     else{
-            
-       
         const Job = new Db.JobRepository(Model);
         Job.CreatorUserId = PostedBy._id;
         await Job.save();
         return("JOb Created");
-
     }
-
 
   }
   catch(err)
