@@ -1,0 +1,41 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.css" />
+
+<app-admin-header></app-admin-header>
+<div class="container-fluid mt-5">
+
+<div class="row">
+
+    <div class="col-md-3">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div  class="col-md-9" >
+        <a  [routerLink]="['/Admin/Jobs/CreateJobPost']">   <button class="btn btn-success mr-5">Post New Job</button> </a> 
+        <div *ngFor="let Job of Jobs  | paginate: config " class="row mb-2 p-2 bg-primary" >
+
+        <div class="col-md-6">  {{Job.CompanyName}}</div>
+        
+        <div class="col-md-6 text-center">
+<table class="table table-bordered">
+    <tr>
+        <td> All<br> ({{count}})</td>
+        <td> Interviewed  <br> (200)</td>
+        <td> Pending  <br> (300)</td>
+        <td> Hired <br>   (20)</td>
+        <td> Rejected <br>(3)</td>
+    </tr>
+</table>
+ 
+    </div>
+      
+  
+       
+        </div>
+
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    </div>
+
+    </div>
+
+</div>

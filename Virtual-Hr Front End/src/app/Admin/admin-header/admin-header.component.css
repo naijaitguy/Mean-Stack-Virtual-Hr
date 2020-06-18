@@ -1,0 +1,7 @@
+ul >li >a { color: #ffffff; }
+ul >li >a:hover { color: #ffffff; background-color: crimson; border-radius: 20px; }
+ul >li >a:active { color: #ffffff; background-color: crimson; }
+.navbar > a{ color: #ffffff; padding: 10px;}
+.navbar > a:hover{ color: #ffffff; background-color: crimson; border-radius: 20px; }
+
+ul >li >a:visited { color: #ffffff; background-color: crimson; }

@@ -1,0 +1,347 @@
+<app-userheader></app-userheader>
+<div class="container mt-5">
+
+    <div class="row container">
+
+    <h3 class="text-primary ">Applying For  {{Jobs.JobTitle}} </h3> 
+       
+
+        
+        
+    </div>
+
+    <div class="row container">
+
+       
+           
+      <h3 class="text-primary"> At    {{Jobs.CompanyName}} </h3> 
+            
+            
+        </div>
+
+   
+
+<form [formGroup]="FormData" (ngSubmit)="ProcessForm()"  class="card bg-light  container">
+    <span *ngIf="Success" class="alert alert-success mt-5"> Job Successfully Added </span>
+
+    <span *ngIf="Loading" class="alert alert-success mt-5"> Load ........... </span>
+<div class="row card-body ">
+
+
+    <div class="col-md-4 ">
+
+<h3>
+    Personal Information
+   </h3>
+   <hr>
+ <!----  -->
+ <div class="form-group ">
+    <label> First Name </label>
+         <input type="text" formControlName= "CompanyName" class="form-control" required placeholder="Enter Company Name" >
+       <div *ngIf ="Submitted && f.CompanyName.errors " class=" alert p-1 alert-danger">
+      <span *ngIf = f.CompanyName.errors.required> Company Name is Required </span> 
+       </div>
+ 
+ </div>
+ 
+ <!---------->
+
+  <!----  -->
+  <div class="form-group ">
+    <label> Last Name </label>
+         <input type="text" formControlName= "CompanyName" class="form-control" required placeholder="Enter Company Name" >
+       <div *ngIf ="Submitted && f.CompanyName.errors " class=" alert p-1 alert-danger">
+      <span *ngIf = f.CompanyName.errors.required> Company Name is Required </span> 
+       </div>
+ 
+ </div>
+ 
+ <!---------->
+
+  <!----  -->
+  <div class="form-group ">
+    <label> Address </label>
+         <input type="text" formControlName= "CompanyName" class="form-control" required placeholder="Enter Company Name" >
+       <div *ngIf ="Submitted && f.CompanyName.errors " class=" alert p-1 alert-danger">
+      <span *ngIf = f.CompanyName.errors.required> Company Name is Required </span> 
+       </div>
+ 
+ </div>
+ 
+ <!---------->
+
+  <!----  -->
+  <div class="form-group">
+    <label> Male </label>
+      <input value="Male" name="gender" type="radio" size="3" class="ml-2">
+      <label  class="ml-5"> Female </label>
+      <input value="Male" name="gender" type="radio"  class="ml-2" >
+       <div *ngIf ="Submitted && f.JobTitle.errors " class=" alert p-1 alert-danger">
+      <span *ngIf = f.JobTitle.errors.required> Job Title is Required </span> 
+       </div>
+ 
+ </div>
+ 
+ <!---------->
+
+     <!----  -->
+  <div class="form-group">
+        <label> Phone Number </label>
+       <input type="tel" class="form-control">
+            
+           <div *ngIf ="Submitted && f.Description.errors " class=" alert p-1 alert-danger">
+          <span *ngIf = f.Description.errors.required> Job Description is Required </span> 
+           </div>
+     
+     </div>
+     
+     <!---------->
+
+        <!----  -->
+        <div class="form-group">
+            <label> Email Address </label>
+         <input type="email" class="form-control">
+                
+               <div *ngIf ="Submitted && f.Responsibility.errors " class=" alert p-1 alert-danger">
+              <span *ngIf = f.Responsibility.errors.required> Job Responsibility is Required </span> 
+               </div>
+         
+         </div>
+         
+        <!----  -->
+        <div class="form-group">
+            <label> Date Of Birth </label>
+         <input type="date" class="form-control">
+                
+               <div *ngIf ="Submitted && f.Responsibility.errors " class=" alert p-1 alert-danger">
+              <span *ngIf = f.Responsibility.errors.required> Job Responsibility is Required </span> 
+               </div>
+         
+         </div>
+
+             <!----  -->
+        <div class="form-group">
+            <label> Current Age </label>
+         <input type="number" class="form-control">
+                
+               <div *ngIf ="Submitted && f.Responsibility.errors " class=" alert p-1 alert-danger">
+              <span *ngIf = f.Responsibility.errors.required> Job Responsibility is Required </span> 
+               </div>
+         
+         </div>
+
+       
+         
+    </div>
+
+
+    <div class="col-md-4 ">
+
+<h3> Academic Information</h3>
+        <hr>
+       
+
+        <div class="form-group ">
+            <label> Name Of Institution </label>
+                 <input type="text" formControlName= "JobField" class="form-control" required placeholder="Enter Job Field" >
+               <div *ngIf ="Submitted && f.JobField.errors " class=" alert p-1 alert-danger">
+              <span *ngIf = f.JobField.errors.required> Job Field is Required </span> 
+               </div>
+         
+         </div>
+         
+         
+        <div class="form-group ">
+            <label> Course  </label>
+                 <input type="text" formControlName= "JobField" class="form-control" required placeholder="Enter Job Field" >
+               <div *ngIf ="Submitted && f.JobField.errors " class=" alert p-1 alert-danger">
+              <span *ngIf = f.JobField.errors.required> Job Field is Required </span> 
+               </div>
+         
+         </div>
+         
+
+                <!----  -->
+                <div class="form-group">
+                    <label> Qualification </label>
+                         <select formControlName= "Qualification" class="form-control" required placeholder="Enter Company Name" >
+                
+                            <option value="OND "> OND</option>
+                            <option value="HND"> HND</option>
+                            <option value=" B.Sc"> B.Sc </option>
+                            <option value=" M.Sc"> M.Sc </option>
+                            <option value=" Ph.D"> Ph.D </option>
+                         </select>
+                       <div *ngIf ="Submitted && f.Qualification.errors " class=" alert p-1 alert-danger">
+                      <span *ngIf = f.Qualification.errors.required> Select Job Qualification </span> 
+                       </div>
+                 
+                 </div>
+                 
+                 <!---------->
+                 <div class="form-group">
+                    <label> Program </label>
+                         <select formControlName= "JobType" class="form-control" required placeholder="Enter Company Name" >
+                
+                            <option value="Full Time ">Full Time</option>
+                            <option value="Part Time"> Part Time</option>
+                           
+                           
+                         </select>
+                       <div *ngIf ="Submitted && f.JobType.errors " class=" alert p-1 alert-danger">
+                      <span *ngIf = f.JobType.errors.required> Select Job Type </span> 
+                       </div>
+                 
+                 </div>
+             <!---------->
+
+             <div class="form-group">
+                <label>Started Date </label>
+                <input type="date" formControlName= "Requirement" class="form-control"> 
+                    
+                   <div *ngIf ="Submitted && f.Requirement.errors " class=" alert p-1 alert-danger">
+                  <span *ngIf = f.Requirement.errors.required> Job Requirement is Required </span> 
+                   </div>
+             
+             </div>
+             
+             <!---------->
+
+             <div class="form-group">
+                <label>Year Of Graduation </label>
+                <input type="date" formControlName= "Requirement" class="form-control"> 
+                    
+                   <div *ngIf ="Submitted && f.Requirement.errors " class=" alert p-1 alert-danger">
+                  <span *ngIf = f.Requirement.errors.required> Job Requirement is Required </span> 
+                   </div>
+             
+             </div>
+             
+             <!---------->
+            <!----  -->
+            <div class="form-group">
+                <label> Class Of Degree </label>
+                     <input type="text" class="form-control">
+                   <div *ngIf ="Submitted && f.Location.errors " class=" alert p-1 alert-danger">
+                  <span *ngIf = f.Location.errors.required> Location is Required </span> 
+                   </div>
+             
+             </div>
+             
+             <!---------->
+
+               <!----  -->
+            <div class="form-group">
+                <label> Upload Cv </label>
+                     <input type="file" class="file">
+                   <div *ngIf ="Submitted && f.Location.errors " class=" alert p-1 alert-danger">
+                  <span *ngIf = f.Location.errors.required> Location is Required </span> 
+                   </div>
+             
+             </div>
+             
+             <!---------->
+
+
+    </div>
+<div class="col-md-4">
+
+
+<h2> Work Experience</h2>
+<hr>
+
+         <!----  -->
+         <div class="form-group">
+            <label> Company Name </label>
+                 <input type="text" formControlName= "JobType" class="form-control" required placeholder="Enter Company Name" >
+        
+               <div *ngIf ="Submitted && f.JobType.errors " class=" alert p-1 alert-danger">
+              <span *ngIf = f.JobType.errors.required> Select Job Type </span> 
+               </div>
+         
+         </div>
+         
+         <!---------->
+         <div class="form-group">
+            <label>Position Held </label>
+            <input type="text" formControlName= "JobType" class="form-control" required placeholder="Enter Company Name" >
+        
+               <div *ngIf ="Submitted && f.JobType.errors " class=" alert p-1 alert-danger">
+              <span *ngIf = f.JobType.errors.required> Select Job Type </span> 
+               </div>
+         
+         </div>
+    <!----  -->
+
+    <div class="form-group">
+        <label> Responsibility </label>
+        <textarea formControlName= "JobType" class="form-control" required placeholder="Enter Company Name" >
+    </textarea>
+           <div *ngIf ="Submitted && f.JobType.errors " class=" alert p-1 alert-danger">
+          <span *ngIf = f.JobType.errors.required> Select Job Type </span> 
+           </div>
+     
+     </div>
+<!----  -->
+    <div class="form-group">
+        <label> Years Of Experience  </label>
+             <select formControlName= "Experience" class="form-control" required placeholder="Enter Company Name" >
+    
+                <option value="1">1 Year</option>
+                <option value="2">2 Years</option>
+                <option value="3">3 Years</option>
+                <option value="4">4 Years</option>
+                <option value="5">5 Years</option>
+                <option  value="6">6 Years</option>
+                <option value="7">7 Years</option>
+                <option value="8">8 Years</option>
+                <option value="9">9 Years</option>
+               <option value="10">10 Years</option>
+                    <option value="11">11 Years</option>
+                    <option value="12">12 Years</option>
+                    <option value="13">13 Years</option>
+                    <option value="14">14 Years</option>
+                    <option value="15">15 Years</option>
+                    <option value="16">16 Years</option>
+                    <option value="17">17 Years</option>
+                    <option value="18">18 Years</option>
+                    <option value="19">19 Years</option>
+                    <option value="20">20 Years</option>
+               
+             </select>
+           <div *ngIf ="Submitted && f.Experience.errors " class=" alert p-1 alert-danger">
+          <span *ngIf = f.Experience.errors.required> Years of is Required </span> 
+           </div>
+     
+     </div>
+     
+     <!---------->
+  <!----  -->
+  <div class="form-group">
+    <label> Expiring date </label>
+         <input type="date" formControlName= "ExpiringDate" class="form-control" required placeholder="Enter Job Title" >
+       <div *ngIf ="Submitted && f.ExpiringDate.errors " class=" alert p-1 alert-danger">
+      <span *ngIf = f.ExpiringDate.errors.required> Job Expiring Date is Required </span> 
+       </div>
+ 
+ </div>
+ 
+ <!---------->
+
+
+ <div class="form-group mt-5">
+
+    <input type="submit" value=" Create Job " class="btn btn-block btn-primary">
+
+ </div>
+
+</div>
+
+</div>
+</form>
+</div>
+
+
+
+
+

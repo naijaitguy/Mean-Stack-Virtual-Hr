@@ -1,0 +1,54 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/jquery-jgrowl/1.4.1/jquery.jgrowl.min.css" />
+<app-userheader></app-userheader>
+
+<div class="container">
+<div class="row container mt-5 mb-3">
+
+    <h1 class="text-primary"> Job Oppotunities </h1>
+  
+</div>
+<hr>
+<div class="row">
+<div class="col-md-3">
+
+    search Job By Location<br>
+    search Job By Qualificatio<br>
+
+</div>
+
+
+<div class="col-md-9">
+<div *ngFor="let Job of Jobs  | paginate: config " class="row">
+
+<div class="col-md-12">
+
+          
+            <h5>  Client:   {{Job.CompanyName}} </h5> 
+           
+        <h5> Job Title:  {{Job.JobTitle}}</h5>  
+
+       
+        <h5>   Qualification:  {{Job.Qualification}} </h5>  
+       
+            <h5>  Location:     {{Job.Location}}</h5>  
+        
+                <h5>  Expiring Date: <span class="text-danger"> {{Job.ExpiringDate}} </span>   </h5>  
+       
+         <div class="float-right">  <a [routerLink]="['/User/Jobs/JobList/ViewJob/',Job._id]" class="btn  btn-primary mybtn" >  View Job Details  </a>
+            <a [routerLink]="['/Application/Jobs/Apply/',Job._id]" class="btn ml-2  btn-success mybtn" >  Apply Now  </a>
+        </div> 
+            <hr class="mt-5">
+        </div>
+
+    </div>
+
+  
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+
+</div>
+</div>
+</div>
+
+
+

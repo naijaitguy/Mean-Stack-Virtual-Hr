@@ -1,0 +1,43 @@
+<nav  class=" navbar navbar-expand-lg navbar-dark bg-dark">
+    <a [routerLink]="['/Admim/Application/Allapplications']"  class="navbar-brand ">
+         
+        VIRTUAL HR 
+        </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div  class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a [routerLink]="['/Admim/Application/Allapplications']" class="nav-link "> Home  </a>
+          </li>
+        
+        
+          <li *ngIf=" UserLogOut" class="nav-item">
+            <a [routerLink]="['/Identity/User/Registration']" class="nav-link ">  Create Account </a>
+          </li>
+          <li *ngIf=" UserLogOut" class="nav-item">
+            <a [routerLink]="['/Identity/Admin/Authentication']" class="nav-link ">  Sign In </a>
+          </li>
+
+
+          <li *ngIf="UserPanel" class="nav-item">
+            <a [routerLink]="['/Admin/ManageAccount']" class="nav-link ">  Manage Account </a>
+          </li>
+
+          <li *ngIf="UserPanel" class="nav-item">
+            <a [routerLink]="['/Admin/MyProfile']" class="nav-link ">  My Profile </a>
+          </li>
+
+
+        </ul>
+      
+ <a  [routerLink]="['/Admin/Jobs/CreateJobPost']">   <button class="btn btn-success mr-5">Post New Job</button> </a> 
+        <div *ngIf="UserPanel" class="navbar-right inline " style="color: #ffffff;">
+  
+          <i class="fa fa-user-circle"></i>  Welcome Back Admin User - {{UserName}}
+           <a [routerLink] (click)="LogOut()"  style="text-decoration: none;" class="btn-sm  btn-primary"> Sign Out <i class="fa fa-sign-out"></i> </a>
+              
+        </div>
+      </div>
+    </nav>

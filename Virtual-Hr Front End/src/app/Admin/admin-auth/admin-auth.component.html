@@ -1,0 +1,126 @@
+<app-admin-header></app-admin-header>
+
+<body class="bg-dark">
+<div class="container pt-5">
+
+<div class="row" style="display:flexbox;" >
+
+  <div class="col-md-3"></div>
+
+  <div class="col-md-5">
+
+<h2 class="text-center mb-4 mt-4" style="color: #ffffff;"> Admin Log In   </h2>
+
+<div class="card bg-light" style="color: black;">
+
+<div class="card-body ">
+
+  <div *ngIf ="LoginError " class=" alert p-1 alert-danger"> Invalid Login Credentials  </div>
+  <div *ngIf ="Loading " class=" alert p-1 alert-success"> Loading ............  </div>
+  <form [formGroup]="FormData" (ngSubmit) ="ProcessForm()" class="form-signin">
+ <!----  -->
+<div class="form-group">
+
+<label> Email Address </label>
+      <div class="input-group mb-2 mr-sm-2">
+
+  <div class="input-group-prepend">
+    <div class="input-group-text">@</div>
+    </div>
+
+    <input type="email" formControlName= "Email" class="form-control" required placeholder="Enter Email" >
+    </div>
+
+    <div *ngIf ="Submitted && f.Email.errors " class=" alert p-1 alert-danger">
+      
+      <span *ngIf = f.Email.errors.required> Email is Required </span> 
+      <span *ngIf = f.Email.errors.pattern> Enter a Valid Email Address </span> 
+    
+    </div>
+
+</div>
+
+<!---------->
+
+
+
+
+   <!----  -->
+<div class="form-group">
+
+  <label for="inputPassword6">Password</label>
+  <div class="input-group mb-2 mr-sm-2">
+  
+    <div class="input-group-prepend">
+      <div class="input-group-text"> <i class="fa fa-key"></i></div>
+      </div>
+  
+      <input type="password" formControlName="Password" required id="inputPassword6" placeholder="Enter Password " class="form-control " aria-describedby="passwordHelpInline">
+      </div>
+      <div *ngIf ="Submitted && f.Password.errors" class=" alert p-1 alert-danger">
+      
+        <span *ngIf =" f.Password.errors.required "> Password  is Required </span> 
+        <span *ngIf =" f.Password.errors.minlength "> Password Most Be more than 6 Characters </span> 
+      
+
+      </div>
+  
+  </div>
+  <!----->
+
+ 
+   <div class="form-group">
+
+    
+  <label for="Remember"> Remember Me ? </label>
+
+  <input name="Remember" type="checkbox" class="ml-2">
+
+  </div>
+  <!---------->
+
+  <div class="form-group">
+
+    <input  type="submit" value=" Log in" class="btn btn-block btn-primary">
+
+  </div>
+    <!---------->
+
+
+    <div class="form-group">
+
+      
+
+      <a [routerLink] ="['/Identity/User/Registration']" > <span > Forgot Password  ?   </span> </a> 
+
+    </div>
+      <!---------->
+      <div class="form-group">
+
+ 
+  
+        <span > Don't Have Account Yet ?  <a [routerLink] ="['/Identity/User/Registration']" class="btn btn-block btn-secondary" >  Sign Up Here </a>    </span> 
+    
+      </div>
+        <!---------->
+  
+  
+
+</form>
+
+
+
+</div>
+
+
+</div>
+
+</div>
+
+<div class="col-md-3"></div>
+
+</div>
+
+</div>
+
+</body>
