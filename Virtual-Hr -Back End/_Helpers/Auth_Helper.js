@@ -51,7 +51,7 @@ exports.Authorization =  (roles = [])=> {
  
    return [
        // authenticate JWT token and attach user to request object (req.user)
-       expressJwt({secret}), 
+       expressJwt({secret , algorithms: ['RS256']}), 
  
        // authorize based on user role
        async  (req, res, next) => {
